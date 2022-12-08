@@ -1,0 +1,39 @@
+{{!-- head --}}
+{{>head}}
+
+
+{{!-- head --}}
+
+<body class="app">   
+
+    <!--//app-header-->
+<header class="app-header fixed-top">
+	{{>inv.navbar}}
+	{{>inv.sidebar}}
+</header>
+      
+    <!--//app-header-->
+    
+               <div class="app-wrapper">
+	    
+	    <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl">
+			    
+			    <h1 class="app-page-title">My Account</h1>
+                <div class="row gy-4">
+
+	               {{>me.profile}}
+
+	               {{>me.security}}
+
+                </div><!--//row-->
+			    
+		    </div><!--//container-fluid-->
+	    </div><!--//app-content-->
+	    
+	  
+    </div><!--//app-wrapper-->    					
+
+
+	    
+	    {{>inv.footer}}

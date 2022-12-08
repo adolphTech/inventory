@@ -1,0 +1,62 @@
+{{!-- head --}}
+{{>head}}
+
+
+{{!-- head --}}
+
+<body class="app">   
+
+    <!--//app-header-->
+<header class="app-header fixed-top">
+	{{>inv.navbar}}
+	{{>inv.sidebar}}
+</header>
+      
+    <!--//app-header-->
+    
+    <div class="app-wrapper">
+		
+	    
+	    <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl">
+			    
+			    {{>orders.body.topNav}}
+			    
+			    {{>inv.toggler}}
+				
+				
+				<div class="tab-content" id="orders-table-tab-content">
+			        <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+					    <div class="app-card app-card-orders-table shadow-sm mb-5">
+						    <div class="app-card-body">
+							  
+                         {{!-- {{>orders.ordersTable}} --}}
+
+
+
+						    </div><!--//app-card-body-->		
+						</div><!--//app-card-->
+					
+			        </div>
+                    <!--//tab-pane-->
+			         
+			       {{>inv.all.table}}
+
+			        <!--//tab-pane-->
+
+                    {{>inv.stockUpdates.table}}
+
+                    {{>disburse.all.table}}
+
+                    <!--//tab-pane-->
+				</div><!--//tab-content-->
+				
+				
+			    
+		    </div><!--//container-fluid-->
+	    </div><!--//app-content-->
+
+		{{>modals}}
+
+	    
+	    {{>inv.footer}}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td 
+        {
+            border: solid 1px #ddd;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        th { 
+            font-weight:bold;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com//ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+<body>
+    <input type='button' onclick='tableFromJson()' value='Create Table from JSON data' />
+    <p id="showData"></p>
+</body>
+
+<script>
+  let tableFromJson =async () => {
+
+    const response = await axios.get("http://localhost:8000/inventory/all")
+
+    const myBooks = response.data
+    // the json data.
+    const myBooks2 = [
+      {'Book ID': '1', 'Book Name': 'Challenging Times',
+       'Category': 'Business', 'Price': '125.60'
+      },
+      {'Book ID': '2', 'Book Name': 'Learn JavaScript',
+       'Category': 'Programming', 'Price': '56.00'
+      },
+      {'Book ID': '3', 'Book Name': 'Popular Science',
+       'Category': 'Science', 'Price': '210.40'
+      }
+    ]
+
+
+    // Extract value from table header. 
+    // ('Book ID', 'Book Name', 'Category' and 'Price')
+    let col = [];
+    for (let i = 0; i < myBooks.length; i++) {
+      for (let key in myBooks[i]) {
+        if (col.indexOf(key) === -1) {
+          col.push(key);
+        }
+      }
+    }
+
+    // Create table.
+    const table = document.createElement("table");
+    table.setAttribute("class","myTable")
+
+    // Create table header row using the extracted headers above.
+    let tr = table.insertRow(-1);                   // table row.
+
+    for (let i = 0; i < col.length; i++) {
+      let th = document.createElement("th");      // table header.
+      th.innerHTML = col[i];
+      tr.appendChild(th);
+    }
+
+    // add json data to the table as rows.
+    for (let i = 0; i < myBooks.length; i++) {
+
+      tr = table.insertRow(-1);
+
+      for (let j = 0; j < col.length; j++) {
+        let tabCell = tr.insertCell(-1);
+        tabCell.innerHTML = myBooks[i][col[j]];
+      }
+    }
+
+    // Now, add the newly created table with json data, to a container.
+    const divShowData = document.getElementById('showData');
+    divShowData.innerHTML = "";
+    divShowData.appendChild(table);
+
+
+  }
+</script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+  <script>
+    $(function () {
+        $('#myTable').DataTable();
+    });
+</script>
+
+</html>

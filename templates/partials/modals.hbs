@@ -1,0 +1,134 @@
+   <!-- Modal  add item by admin to store-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="form-horizontal" id="submitProductForm" action="http://localhost:3000/inventory/stock/add" method="POST" enctype="">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Items to Store</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+{{!-- message --}}
+
+
+{{!-- message --}}
+        
+              <!-- /modal-body -->
+         <div class="modal-body" style="max-height:450px; overflow:auto;">
+          	     	           	       
+      
+                  <div class="form-group d-flex">
+                      <label for="productName" class="col-sm-3 control-label">Item Code : </label>
+        
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="itemCode" placeholder=" eg. COS0059" name="itemCode" autocomplete="off" required>
+                          </div>
+                  </div>
+                   <!-- /form-group-->	    
+      
+                   <div class="form-group d-flex pt-3">
+                    <label for="productName" class="col-sm-3 control-label">Quantity : </label>
+      
+                        <div class="col-sm-8">
+                          <input type="number" class="form-control" id="quantityReceived" placeholder="eg. 6 " name="quantityReceived" autocomplete="off" required>
+                        </div>
+                </div>
+                 <!-- /form-group-->        	 
+      
+                	         	        
+                </div> 
+                
+                <!-- /modal-body -->
+                
+           
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" id="submit">Add Items</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+    <!-- modals -->
+
+
+
+
+
+{{!-- dispatch item modal --}}
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="form-horizontal" id="submitProductForm" action="http://localhost:3000/disburse" method="POST" enctype="">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Dispatch Item From Store</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        
+              <!-- /modal-body -->
+         <div class="modal-body" style="max-height:450px; overflow:auto;">
+          	     	           	       
+      
+                  <div class="form-group d-flex">
+                      <label for="personalNumber" class="col-sm-3 control-label">P/no : </label>
+        
+                          <div class="col-sm-8">
+                            <input type="number" class="form-control" id="personalNumber" placeholder=" 45675" name="personalNumber" autocomplete="off" required>
+                          </div>
+                  </div> 
+                   <!-- /form-group-->	    
+      
+                   <div class="form-group d-flex pt-3">
+                    <label for="userName" class="col-sm-3 control-label">Full Names : </label>
+      
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="userName" placeholder="eg. John Doe" name="userName" autocomplete="off" required>
+                        </div>
+                </div>
+                 <!-- /form-group-->  
+
+                  <!-- /form-group-->	    
+      
+                   <div class="form-group d-flex pt-3">
+                    <label for="department" class="col-sm-3 control-label">Department: </label>
+      
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="department" placeholder="eg. ict " name="department" autocomplete="off" required>
+                        </div>
+                </div>
+                 <!-- /form-group-->
+                  <!-- /form-group-->	    
+      
+                   <div class="form-group d-flex pt-3">
+                    <label for="itemCode" class="col-sm-3 control-label">Item Code :</label>
+      
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="itemCode" placeholder="eg. eg. COS0059 " name="itemCode" autocomplete="off" required>
+                        </div>
+                </div>
+                 <!-- /form-group-->
+                  <!-- /form-group-->	    
+      
+                   <div class="form-group d-flex pt-3">
+                    <label for="quantity" class="col-sm-3 control-label">Quantity : </label>
+      
+                        <div class="col-sm-8">
+                          <input type="number" class="form-control" id="quantity" placeholder="eg. 2 " name="quantity" autocomplete="off" required>
+                        </div>
+                </div>
+                 <!-- /form-group-->      	 
+      
+                	         	        
+                </div> 
+                
+                <!-- /modal-body -->
+                
+           
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" id="submit">Dispatch Item</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>

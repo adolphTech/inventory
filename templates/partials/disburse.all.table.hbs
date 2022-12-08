@@ -1,0 +1,40 @@
+<div class="tab-pane fade" id="orders-cancelled" role="tabpanel" aria-labelledby="orders-cancelled-tab">
+					    <div class="app-card app-card-orders-table mb-5">
+						    <div class="app-card-body">
+							    <div class="table-responsive">
+							        
+
+                            <div class="zg-body">
+
+ <zing-grid search pager sort page-size="5" ccompact="" zebra="" role="grid" viewport="tablet-portrait" >
+    <zg-caption>Disbursement History</zg-caption> 
+
+    <zg-data >
+      <!-- define the main source for the API -->
+      
+      <zg-param name="src" value="http://localhost:3000/disburse/all"></zg-param>
+       
+       <!-- Need to tell ZG how mto search the API -->
+     <zg-param name="searchKey" value="search"></zg-param>
+    </zg-data>
+
+     <zg-colgroup>
+    <zg-column index="personalNumber" header="P/No" ></zg-column>
+    <zg-column index="userName" header="User Name"></zg-column>
+    <zg-column index="department" header="department" ></zg-column>
+    <zg-column index="itemCode" header="Item Code" ></zg-column>
+    <zg-column index="quantity" header="Quantity Out"></zg-column>
+    <zg-column index="approvedBy" header="Approved By" ></zg-column>
+    <zg-column index="date" header="Date"></zg-column>
+    <zg-column index="time" header="Time"></zg-column>
+  </zg-colgroup> 
+
+  </zing-grid>    
+  </div> 
+  
+
+
+						        </div><!--//table-responsive-->
+						    </div><!--//app-card-body-->		
+						</div><!--//app-card-->
+			        </div>

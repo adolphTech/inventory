@@ -1,0 +1,55 @@
+
+:root {
+  --bgColor: #041F35;
+  --headerFontColor: #fff;
+  --mainFontColor: var(--bgColor, darkblue);
+  --rowColor: #777;
+  --zg-caption-background: var(--bgColor, inherit);
+  --zg-caption-color: var(--headerFontColor, white);
+  --zing-grid-color: var(--mainFontColor);
+}
+
+.zg-body .button {
+  text-align: center;
+  background: #07C;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  padding: 5px 20px;
+  cursor: pointer;
+  margin: 15px 0 15px 15px;
+  position: relative;
+  top: 0;
+}
+
+.zg-body .button:hover {
+  background: #1b6ead;
+}
+
+zing-grid[loading] {
+  min-height: 600px;
+}
+
+/* hide some inner grid elements */
+
+zing-grid[loading] zg-pager {
+  visibility: hidden;
+}
+
+zg-load-mask {
+  /* set the color to match the gif */
+  opacity: .90;
+  top: 65px;
+  height: calc(100% - 65px);
+  /* custom gif for loading */
+  background-image: url('https://storage.googleapis.com/zg-demos.appspot.com/starwars_loading.gif');
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+zing-grid[loading] {
+  height: 428px;
+}

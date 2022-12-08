@@ -1,0 +1,37 @@
+                <div class="col-12 col-lg-6">
+				        <div class="app-card app-card-stats-table h-100 shadow-sm">
+					        <div class="app-card-header p-3">
+						        <div class="row justify-content-between align-items-center">
+							        <div class="col-auto">
+						                <h4 class="app-card-title">Add Items to Inventory</h4>
+							        </div><!--//col-->
+							        
+						        </div><!--//row-->
+					        </div><!--//app-card-header-->
+					        <div class="app-card-body p-3 p-lg-4">
+						        <div class="table-responsive">
+
+
+							        <form class="auth-form login-form " action="/inventory/stock/add" method="POST">         
+							<div class="email mb-3">
+								<label class="text-primary fw-bolder mb-3" for="itemCode">Item Code</label>
+								<input id="itemCode" name="itemCode" type="text" class="form-control signin-email" placeholder="COS0059" required="required">
+							</div><!--//form-group-->
+							<div class="password mb-3">
+								<label class="text-primary fw-bolder mb-3" for="quantityReceived"> Quantity to Add</label>
+								<input id="quantityReceived" name="quantityReceived" type="number" class="form-control signin-password" placeholder="5" required="required">
+								<div class="extra mt-3 row justify-content-between">
+									
+								</div><!--//extra-->
+							</div><!--//form-group-->
+							<div class="text-center">
+								<button type="submit" class="btn app-btn-primary w-75 theme-btn mx-auto">Add To Inventory</button>
+							</div>
+						</form>
+						
+
+
+						        </div><!--//table-responsive-->
+					        </div><!--//app-card-body-->
+				        </div><!--//app-card-->
+			        </div>
