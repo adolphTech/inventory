@@ -107,13 +107,13 @@ app.use("/disburse",disbursementRouter);
 app.use("/users",usersRouter);
 
 
-app.get("/flash",(req,res)=>{
+app.get("/flash",ensureAuthenticated,(req,res)=>{
     res.status(400).render("messages.hbs")
     // res.render(index)
 })
 
  
-app.get("/",async(req,res)=>{
+app.get("/",ensureAuthenticated,async(req,res)=>{
     try{
         let cardData = {};
           await FromStore.find({})

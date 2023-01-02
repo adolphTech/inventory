@@ -35,26 +35,18 @@
 			          
                       {{!-- cards stats --}}
                            
-						 
-{{#if message}}
-<div  style="text-align:center" ; class="alert  alert-{{message.type}}  alert-dismissible fade show mt-4" role="alert">
-  <strong>{{message.intro}}</strong>{{message.message}}.
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-    {{/if}}
-       {{!-- message --}}
-        
-        <div class="d-flex justify-content-center pb-4 pt-3">
-            <button class="btn btn-info" id="back" onclick="history.back()">Go Back</button>
-        </div>
+				
 
-      </div>
-    </div>
-			    
-		    </div><!--//container-fluid-->
-	    </div><!--//app-content-->
+                      {{!-- card stats --}}
 
-	
+                       {{!--  tables--}}
+                          
+			  
+                         {{>stock.tables}}
+                       {{!-- tables --}}
+			       
+
+                    <!--//tab-pane-->
 				</div>
 
                 <!--//tab-content-->
@@ -64,10 +56,7 @@
 		    </div><!--//container-fluid-->
 	    </div><!--//app-content-->
 
-  
-	
+		{{>modals}}
+
 	    
 	    {{>inv.footer}}
-
-
-

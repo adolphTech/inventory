@@ -24,7 +24,7 @@ inventoryRouter.get("/all",ensureAuthenticated,httpGetAllFromStore);
 inventoryRouter.post("/",ensureAuthenticated,httpAddNewFromStore);
 
 inventoryRouter.get("/",ensureAuthenticated,renderInvPage);
-inventoryRouter.get("/stocks",renderStockPage);
+inventoryRouter.get("/stocks",ensureAuthenticated,renderStockPage);
 
 inventoryRouter.post("/stock/add",ensureAuthenticated,httpUpdateStockFromStore);
 inventoryRouter.get("/stock/history",ensureAuthenticated,httpGetAllFromStockUpdates);

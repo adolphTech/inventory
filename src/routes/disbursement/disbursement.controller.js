@@ -79,6 +79,7 @@ async function httpAddNewDisbursements(req,res){
             }
             
             res.redirect("/flash")
+            
            
         }
         else{
@@ -96,6 +97,7 @@ async function httpAddNewDisbursements(req,res){
                 message:`Only ${quantityInStore} unit (s) of ${itemName} remaining`
             }
             res.redirect("/flash")
+            
          }else{
 
          const newStockUpdate = (quantityInStore) -(req.body.quantity);

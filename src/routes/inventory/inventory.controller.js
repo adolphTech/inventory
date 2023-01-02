@@ -76,8 +76,8 @@ async function httpUpdateStockFromStore(req,res){
         
        const quantityToAddInt = parseInt(quantityToAdd)
         const updatedStock = currentQuantityInStore + (quantityToAddInt);
-
-        console.log(`${quantityToAdd} units of ${itemName} added successfully : to ${updatedStock}`);
+       
+        // console.log(`${quantityToAdd} units of ${itemName} added successfully : to ${updatedStock}`);
 
         
         //saving to history
@@ -97,11 +97,17 @@ async function httpUpdateStockFromStore(req,res){
 
         const stockUpdateReq = {quantityReceived:updatedStock}
     
+        // const results =
+         await FromStore.findByIdAndUpdate(myObjectId,stockUpdateReq,{new :true , runValidator:true})
 
-        const results = await FromStore.findByIdAndUpdate(myObjectId,stockUpdateReq,{new :true , runValidator:true})
-
-              res.status(201).send(results)
+              // res.status(201).send(results)
             //  res.send(results)// 
+            req.session.message = {
+              type:"success",
+              intro:`${quantityToAdd} units of ${itemName} added successfully !!!`,
+              message: ` ${updatedStock} items in store now`
+          }
+          res.redirect("/flash")
      }
      catch(err){
         res.status(500).send(err.message)
